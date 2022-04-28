@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-pagination-bullet {
+  @apply w-1.5 h-1.5;
+  &-active {
+    @apply bg-main-blue;
+  }
+}

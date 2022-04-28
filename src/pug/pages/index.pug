@@ -1,0 +1,161 @@
+extends ../layout/main
+
+block head
+  link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+  link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+
+block variables
+  - var title = '華峰建設';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  div
+    div
+      #intro
+    div(class="text-font-gray text-center mb-[87px]")
+      h2(class="text-[19px] md:text-[38px] font-bold mb-[45px] md:mb-[110px]") 華美之境 築就巔峰
+      div(class="text-xs md:text-[23px] space-y-7 md:space-y-[75px] mb-[42px]")
+        p 現代人的生活體驗環繞建築而生
+        p 因此我們更用心創造
+        p 更舒適與安全的幸福空間
+        p 讓人與生態的距離更加貼近
+        p 讓每一位客戶都能愛上回「家」
+      a(class="w-20 md:w-[165px] inline-block text-xs md:text-[23px] text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded", href="about.html") 關於華峰
+    div(class="flex flex-col items-center bg-gradient-to-b from-white to-font-gray px-[29px] md:px-[70px]")
+      div(class="lg:flex")
+        div(class="flex flex-col items-center leading-none mb-[29px] md:mb-[70px]")
+          h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] border-main-blue mb-[13px] md:mb-8 pb-[9px] md:pb-6") 線上建案
+          span(class="text-subtitle-gray text-xs md:text-[25px]") Hot Case
+        a(href="case.html" class="hidden lg:inline-block w-20  text-xs text-main-blue text-center py-[6.5px] border border-main-blue rounded") 查看更多
+      div(class="w-full text-center mb-[44px] md:mb-[110px]")
+        // Slider main container
+        div(class="swiper build-online mb-[35px] md:mb-[85px]")
+          // Additional required wrapper
+          div(class="swiper-wrapper pb-6 md:pb-[51px]")
+            // Slides
+            .swiper-slide
+              img(src="assets/img/banner01.png", alt='')
+            .swiper-slide
+              img(src="assets/img/banner01.png", alt='')
+            .swiper-slide
+              img(src="assets/img/banner01.png", alt='')
+          // If we need pagination
+          div(class="swiper-pagination !-bottom-1.5 !space-x-3 md:!space-x-[29px]")
+        a(href="case.html" class="w-20 md:w-[165px] inline-block lg:hidden text-xs md:text-[23px] text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 查看更多
+    div(class="flex flex-col items-center mt-[66px] md:mt-[126px] px-[45px] md:px-[110px] mb-[78px] md:mb-[146px]")
+      div(class="lg:flex")
+        div(class="flex flex-col items-center leading-none mb-[35px] md:mb-[83px]")
+          h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] border-main-blue mb-[13px] md:mb-8 pb-[9px] md:pb-6") 歷史建案
+          span(class="text-subtitle-gray text-xs md:text-[25px]") History Performance
+        a(href="histroy.html" class="hidden lg:inline-block w-20  text-xs text-main-blue text-center py-[6.5px] border border-main-blue rounded") 查看更多
+      div(class="grid grid-cols-2 gap-x-5 md:gap-x-[50px] gap-y-[38px] md:gap-y-[90px] mb-[38px] md:mb-[95px]")
+        each item in [1, 2, 3, 4]
+          div
+            div(class="mb-2.5 md:mb-[25px]")
+              img(src="assets/img/build-pic.png", alt="")
+            p(class="text-font-gray text-center text-xs md:text-[25px] md:leading-tight") 2021 | 華峰雙子星
+      a(href="histroy.html" class="w-20 md:w-[165px] inline-block lg:hidden text-xs md:text-[23px] text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 查看更多
+    div(class="flex flex-col items-center px-[29px] mb-[60px] md:mb-[140px]")
+      div(class="lg:flex")
+        div(class="flex flex-col items-center leading-none mb-5 md:mb-10")
+          h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] border-main-blue mb-[13px] md:mb-8 pb-[9px] md:pb-6") 華峰團隊
+          span(class="text-subtitle-gray text-xs md:text-[25px]") Related Company
+      div(class="grid grid-cols-5 bg-[url('../img/team-bg.png')] bg-center bg-cover pt-[60px] md:pt-[152px]")
+        div(data-aos="zoom-in")
+          picture
+            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_1.png")
+            img(src="assets/img/team_word_1.png", alt="")
+        div
+        div(data-aos="zoom-in", data-aos-delay="600")
+          img(src="assets/img/team-build_1.png", alt="")
+        div(data-aos="zoom-in")
+          picture
+            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_2.png")
+            img(src="assets/img/team_word_2.png", alt="")
+        div
+        div
+        div(data-aos="zoom-in", data-aos-delay="600")
+          img(src="assets/img/team-build_2.png", alt="")
+        div(data-aos="zoom-in")
+          picture
+            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_3.png")
+            img(src="assets/img/team_word_3.png", alt="")
+        div
+        div(data-aos="zoom-in", data-aos-delay="300")
+          picture
+            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_4.png")
+            img(src="assets/img/team_word_4.png", alt="")
+        div(data-aos="zoom-in", data-aos-delay="900")
+          img(src="assets/img/team-build_3.png", alt="")
+        div(data-aos="zoom-in", data-aos-delay="300")
+          picture
+            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_5.png")
+            img(src="assets/img/team_word_5.png", alt="")
+        div
+        div(data-aos="zoom-in", data-aos-delay="300")
+          img(src="assets/img/team-build_4.png", alt="")
+        div(data-aos="zoom-in", data-aos-delay="900")
+          img(src="assets/img/team-build_5.png", alt="")
+    div(class="mb-[77px] md:mb-[161px] px-[29px] md:px-[70px]")
+      // Slider main container
+      div(class="swiper swiper-build mb-[35px]")
+        // Additional required wrapper
+        div(class="swiper-wrapper pb-6")
+          // Slides
+          .swiper-slide
+            img(src="assets/img/build-pic01.png", alt='')
+          .swiper-slide
+            img(src="assets/img/build-pic01.png", alt='')
+          .swiper-slide
+            img(src="assets/img/build-pic01.png", alt='')
+    div(class="mb-[60px] md:mb-[170px]")
+      div(class="h-[114px] md:h-[274px] flex justify-center items-center bg-[url('../img/build-bg.png')] bg-center relative")
+        img(data-aos="fade-up", data-aos-duration="1000", class="h-[146px] md:h-[351px] absolute bottom-0", src="assets/img/build.png", alt="")
+        img(data-aos="fade-up", data-aos-delay="300", class="h-[47.5px] md:h-[114px] absolute", src="assets/img/build-title.png", alt="")
+
+
+
+block script
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.2/lottie.min.js")
+  script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
+  script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+  script(type='text/javascript').
+    AOS.init();
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('intro'),
+      path: 'https://assets6.lottiefiles.com/packages/lf20_xws1qpeb.json',
+      //json檔案路徑
+      renderer: 'svg',
+      autoplay: true,
+    })
+    animation.addEventListener('loopComplete', () => {
+      animation.goToAndPlay(150, true);
+    });
+    const swiper = new Swiper('.build-online', {
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        renderBullet: function (index, className) {
+          return '<span class="' + className + ' !mx-0"></span>';
+        },
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    const swiperBuild = new Swiper('.swiper-build', {
+      slidesPerView: 1.2,
+      spaceBetween: 8,
+      loop: true,
+      breakpoints: {
+        768: {
+          spaceBetween: 20
+        }
+      }
+    });
