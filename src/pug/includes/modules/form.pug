@@ -1,22 +1,24 @@
-div(class="flex flex-col items-center px-[58px] mb-20")
-  div(class="lg:flex")
-    div(class="flex flex-col items-center leading-none mb-[58px] md:mb-[66px]")
-      h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] border-main-blue mb-[13px] md:mb-8 pb-[9px] md:pb-6") 聯絡我們
-      span(class="text-subtitle-gray text-xs md:text-[25px]") Contact Information
-    a(href="histroy.html" class="hidden lg:inline-block w-20  text-xs text-main-blue text-center py-[6.5px] border border-main-blue rounded") 查看更多
-  img(class="h-[38px] mx-auto mb-3.5 md:mb-[33px]", src="assets/img/logo-no-icon.png", alt='')
-  div(class="text-xs md:text-[22px] text-font-gray text-center space-y-3 md:space-y-[30px] mb-9 md:mb-[88px]")
-    p 台北市中山區中山北路2段129號4樓之1
-    a.block(href="tel:02-8888-8888") TEL:02-8888-8888
-    a.block(href="mailto:service@hua-feng.com.tw") service@hua-feng.com.tw
-  div(class="w-full aspect-w-4 aspect-h-3 mb-[33px] md:mb-20")
-    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.1927235415756!2d121.52098151544725!3d25.061456243343187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d7aaad7bed%3A0x72d184756bde76b1!2z6I-v5bOw5bu66Kit6ZaL55m86IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1650425833160!5m2!1szh-TW!2stw", style="border:0;", allowfullscreen='', loading="lazy", referrerpolicy="no-referrer-when-downgrade")
-  div(class="w-full")
-    div(class="mb-[18px] md:mb-[45px]")
-      input(class="w-full border-0 border-b border-font-gray pl-0 placeholder:text-xs md:placeholder:text-xl placeholder:text-font-gray", type="text", name='', id='', placeholder="聯絡姓名")
-    div(class="mb-[18px] md:mb-[45px]")
-      input(class="w-full border-0 border-b border-font-gray pl-0 placeholder:text-xs md:placeholder:text-xl placeholder:text-font-gray", type="email", name='', id='', placeholder="聯絡Email")
-    div(class="mb-[18px] md:mb-10")
-      label(class="block text-xs md:text-xl text-font-gray mb-[9px]md: mb-[25px]") 聯絡內容訊息
-      textarea(class='w-full border-font-gray', name='', id='', rows="10", title='', placeholder='')
-  button(type="button", class="text-main-blue border border-main-blue rounded px-4 py-[6.5px]") Send Message
+div(class="flex flex-col items-center px-[58px] md:px-[140px] mb-20 md:mb-[140px]")
+  div(class="lg:w-full lg:max-w-[1366px] lg:flex lg:justify-between lg:items-center mb-[58px] md:mb-[66px] lg:mb-[126px]")
+    div(class="flex flex-col lg:flex-row items-center leading-none")
+      h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 聯絡我們
+      span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") Contact Information
+  div(class="w-full lg:max-w-[1366px] lg:flex lg:justify-between")
+    div(class="lg:w-4/12")
+      img(class="h-[38px] mx-auto lg:mx-0 mb-3.5 md:mb-[33px]", src="assets/img/logo-no-icon.png", alt='')
+      div(class="text-xs md:text-[22px] md:leading-tight text-font-gray text-center lg:text-left space-y-3 md:space-y-[30px] mb-9 md:mb-[88px]")
+        p 台北市中山區中山北路2段129號4樓之1
+        a.block(href="tel:02-8888-8888") TEL:02-8888-8888
+        a.block(href="mailto:service@hua-feng.com.tw") service@hua-feng.com.tw
+      div(class="w-full aspect-w-4 aspect-h-3 mb-[33px] md:mb-[60px]")
+        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.1927235415756!2d121.52098151544725!3d25.061456243343187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d7aaad7bed%3A0x72d184756bde76b1!2z6I-v5bOw5bu66Kit6ZaL55m86IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1650425833160!5m2!1szh-TW!2stw", style="border:0;", allowfullscreen='', loading="lazy", referrerpolicy="no-referrer-when-downgrade")
+    div(class="lg:w-8/12 flex flex-col items-center")
+      div(class="w-full")
+        div(class="mb-[18px] md:mb-[45px]")
+          input(class="w-full border-0 border-b border-font-gray pl-0 md:py-5 placeholder:text-xs md:placeholder:text-xl placeholder:text-font-gray", type="text", name='', id='', placeholder="聯絡姓名")
+        div(class="mb-[18px] md:mb-[45px]")
+          input(class="w-full border-0 border-b border-font-gray pl-0 md:py-5 placeholder:text-xs md:placeholder:text-xl placeholder:text-font-gray", type="email", name='', id='', placeholder="聯絡Email")
+        div(class="mb-[18px] md:mb-10")
+          label(class="block text-xs md:text-xl text-font-gray mb-[9px]md: mb-[25px]") 聯絡內容訊息
+          textarea(class='w-full block md:h-[295px] border-font-gray', name='', id='', rows="10", title='', placeholder='')
+      button(type="button", class="text-xs md:text-[23px] md:leading-tight text-main-blue border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") Send Message
