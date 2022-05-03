@@ -5,7 +5,8 @@ module.exports = {
       colors: {
         'font-gray': '#4b4f4e',
         'subtitle-gray': '#757778',
-        'main-blue': '#3999c9'
+        'main-blue': '#3999c9',
+        'main-yellow': '#ddb151'
       }
     },
   },
