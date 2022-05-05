@@ -1,0 +1,32 @@
+extends ../layout/main
+
+block variables
+  - var title = '華峰建設';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  div(class="flex flex-col items-center lg:items-start px-[60px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[202px] lg:mb-[360px]")
+    div(class="lg:max-w-[1366px] lg:w-full lg:flex lg:justify-between lg:items-center lg:mx-auto mb-[36px] md:mb-[86px] lg:mb-[95px]")
+      div(class="flex flex-col lg:flex-row items-center leading-none")
+        h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 關於華峰
+        span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") About Us
+    div(class="lg:max-w-[1366px] lg:w-full lg:grid grid-cols-2 lg:mx-auto gap-x-[78px]")
+      img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic.png", alt="")
+      div(class="text-xs md:text-[23px] leading-[30px] md:leading-[71px]")
+        p
+          |2006年，當別人習慣用利益去看待建築時，
+          span(class="lg:block") 我們以「感情、熱誠」成立了華峰建設。
+        br
+        p
+          |我們以「不只是把房子蓋好而已」期勉自己，
+          span(class="lg:block") 作為「家」的住宅，
+          span(class="lg:block") 不是找一塊地，用四面水泥牆圍起來的建築方格。
+          span(class="lg:block") 而是提供安心生活、分享喜悅的情感交流空間。
+        br
+        p
+          |規劃、經營與服務皆以滿足人性需求出發，
+          span(class="lg:block") 從公共空間進入室內、人與環境緊密的互動，
+          span(class="lg:block") 為這座城市寫下豐富的建築歷史。
+
+
