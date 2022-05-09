@@ -1,0 +1,113 @@
+extends ../layout/main
+
+block head
+  link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+
+block variables
+  - var title = '華峰建設';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  div(class="lg:max-w-[1366px] flex flex-col items-center lg:items-start px-[60px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[55px] md:mb-[135px] lg:mb-[220px] lg:mx-auto")
+    div(class="lg:w-full lg:flex lg:justify-between lg:items-center mb-[36px] md:mb-[86px] lg:mb-[95px]")
+      div(class="flex flex-col lg:flex-row items-center leading-none")
+        h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 歷史建案
+        span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") History Performance
+    div(class="lg:w-full")
+      each item, index in ['華峰雙子星']
+        div(class=`${index !== 0 ? 'hidden':''}` class="tab-content")
+          div(class="lg:grid lg:grid-cols-2 lg:gap-x-[124px]")
+            img(class="lg:max-w-[700px] mb-[45px] md:mb-[105px]", src="assets/img/build-pic.png", alt="")
+            div
+              div(class="flex items-center mb-[22px] md:mb-[52px]")
+                h3(class="text-[15px] md:text-[38px] leading-none")=item
+              p(class="text-xs md:text-[23px] leading-[27px] md:leading-[59px]")
+                |空間規劃單位:華峰建設
+                br
+                |基地位子:新北市三重區福德南路10號
+                br
+                |建案類型:住商用
+                br
+                |樓層高度:地上19層,地下5層
+                br
+                |規劃坪數:469坪
+                br
+                |工程營造單位:盛德營造
+                br
+                |建築設計單位:周簡建築師事務所
+                br
+                |外觀設計單位:周簡建築師事務所
+                br
+                |景觀設計單位:瀚翔景觀-盧胤翰大師
+                br
+                |燈光設計單位:袁宗南照明設計事務所
+                br
+                |開案時間:2020 / 11 / 22
+                br
+                |完工時間:2021/11/22
+  div(class="lg:max-w-[1366px] w-full mb-10 md:mb-24 lg:mb-[126px] px-[29px] md:px-[70px] lg:mx-auto")
+    // Slider main container
+    div(class="swiper gallery-top mb-3")
+      // Additional required wrapper
+      div(class="swiper-wrapper")
+        // Slides
+        div(class="swiper-slide")
+          img(src="assets/img/banner01.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner02.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner03.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner01.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner03.png", alt="")
+    div(class="swiper gallery-thumbs")
+      // Additional required wrapper
+      div(class="swiper-wrapper")
+        // Slides
+        div(class="swiper-slide")
+          img(src="assets/img/banner01.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner02.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner03.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner01.png", alt="")
+        div(class="swiper-slide")
+          img(src="assets/img/banner03.png", alt="")
+  div(class="flex justify-center space-x-[45px] mb-[90px] md:mb-[196px]")
+    a(href="case.html" class="w-20 md:w-[165px] inline-block text-xs md:text-[23px] md:leading-tight text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 預約專案
+    a(href="case.html" class="w-20 md:w-[165px] inline-block text-xs md:text-[23px] md:leading-tight bg-main-blue text-white text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 個案官網
+
+
+block script
+  script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
+  script.
+    const galleryThumbs = new Swiper('.gallery-thumbs', {
+      slidesPerView: 4,
+      spaceBetween: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      breakpoints: {
+        768: {
+          spaceBetween: 12,
+        },
+        1024: {
+          spaceBetween: 30,
+        }
+      }
+    });
+
+    const galleryTop = new Swiper('.gallery-top', {
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+    galleryTop.on("slideChangeTransitionStart", function () {
+      galleryThumbs.slideTo(galleryTop.activeIndex);
+    });
+    galleryThumbs.on("transitionStart", function () {
+      galleryTop.slideTo(galleryThumbs.activeIndex);
+    });
