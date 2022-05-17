@@ -30,7 +30,7 @@ module.exports = {
   },
   output: {
     path: PATHS.dist,
-    filename: `${PATHS.assets}js/[name].[fullhash].js`,
+    filename: `${PATHS.assets}js/[name].js`,
     publicPath: '/',
     assetModuleFilename: 'images/[hash][ext]',
   },
@@ -125,7 +125,8 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[fullhash].css`,
+      filename: `${PATHS.assets}css/[name].css`,
+      // filename: `${PATHS.assets}css/[name].[fullhash].css`,
     }),
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
