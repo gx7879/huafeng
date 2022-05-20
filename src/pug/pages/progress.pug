@@ -19,14 +19,15 @@ block content
       each item, index in [1, 2, 3, 4]
         div(class=`${index !== 0 ? 'hidden':''}` class="tab-content")
           div(class="lg:flex lg:justify-between")
-            ul(class="space-y-[15px] md:space-y-[30px] mb-10 md:mb-[100px] list-disc list-inside")
+            ul(class="lg:flex-1 space-y-[15px] md:space-y-[30px] mb-10 md:mb-[100px] lg:mb-0 list-disc list-inside")
               each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                 li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
                   span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
                   span 開工款
                   span(class="px-1.5 md:px-4") |
                   span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
-            img(class="lg:max-w-[675px] build-image", src="assets/img/build-pic.png", alt="")
+            div(class="lg:h-0 lg:flex-1 lg:pb-[50%] lg:relative lg:overflow-hidden")
+              img(class="lg:max-w-[675px] build-image lg:absolute lg:w-full lg:object-cover", src="assets/img/build-pic.png", alt="")
 
 block script
   script.
