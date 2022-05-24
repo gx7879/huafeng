@@ -24,7 +24,7 @@ block content
         p 讓人與生態的距離更加貼近
         p 讓每一位客戶都能愛上回「家」
       a(class="w-20 md:w-[165px] inline-block text-xs md:text-[23px] md:leading-none text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded", href="about.html") 關於華峰
-    div(class="flex flex-col items-center bg-gradient-to-b from-white to-font-gray lg:-mx-4 px-[29px] md:px-[70px] lg:px-4")
+    div(class="flex flex-col items-center bg-gradient-to-b from-white to-font-gray -mx-4 px-[29px] md:px-[70px] lg:px-4")
       div(class="lg:max-w-[1366px] lg:w-full lg:flex lg:justify-between lg:items-center mb-[29px] md:mb-[70px] lg:mb-[95px]")
         div(class="flex flex-col lg:flex-row items-center leading-none")
           h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 線上建案
@@ -36,12 +36,12 @@ block content
           // Additional required wrapper
           div(class="swiper-wrapper pb-6 md:pb-[51px]")
             // Slides
-            .swiper-slide
-              img(src="assets/img/banner01.png", alt='')
-            .swiper-slide
-              img(src="assets/img/banner01.png", alt='')
-            .swiper-slide
-              img(src="assets/img/banner01.png", alt='')
+            div(class="swiper-slide w-full pb-[48.72%]")
+              img(class="absolute w-full" src="assets/img/banner01.png", alt='')
+            div(class="swiper-slide w-full pb-[48.72%]")
+              img(class="absolute w-full" src="assets/img/banner01.png", alt='')
+            div(class="swiper-slide w-full pb-[48.72%]")
+              img(class="absolute w-full" src="assets/img/banner01.png", alt='')
           // If we need pagination
           div(class="swiper-pagination !-bottom-1.5 !space-x-3 md:!space-x-[29px]")
         a(href="case.html" class="w-20 md:w-[165px] inline-block lg:hidden text-xs md:text-[23px] md:leading-tight text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 查看更多
@@ -51,11 +51,11 @@ block content
           h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 歷史建案
           span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") History Performance
         a(href="histroy.html" class="w-[165px] hidden lg:inline-block text-[23px] text-main-blue leading-none text-center py-[13px] border border-main-blue rounded") 查看更多
-      div(class="lg:max-w-[1366px] grid grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-[50px] lg:gap-x-[60px] gap-y-[38px] md:gap-y-[90px] mb-[38px] md:mb-[95px]")
+      div(class="lg:max-w-[1366px] lg:w-full grid grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-[50px] lg:gap-x-[60px] gap-y-[38px] md:gap-y-[90px] mb-[38px] md:mb-[95px]")
         each item in [1, 2, 3, 4]
           div
-            div(class="mb-2.5 md:mb-[25px] lg:mb-[34px]")
-              img(src="assets/img/build-pic.png", alt="")
+            div(class="w-full pb-[112.89%] mb-2.5 md:mb-[25px] lg:mb-[34px] relative")
+              img(class="w-full absolute", src="assets/img/build-pic.png", alt="")
             p(class="text-font-gray text-center text-xs md:text-[25px] md:leading-tight") 2021 | 華峰雙子星
       a(href="histroy.html" class="w-20 md:w-[165px] inline-block lg:hidden text-xs md:text-[23px] md:leading-tight text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded") 查看更多
     div(class="flex flex-col items-center px-[29px] md:px-[70px] mb-[60px] md:mb-[140px]")
