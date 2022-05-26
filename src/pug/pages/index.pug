@@ -12,7 +12,7 @@ block variables
 block content
   div
     div
-      #intro
+      #intro(class="xl:max-w-[1366px] xl:mx-auto")
     div(class="text-font-gray text-center mb-[87px] md:mb-[123px] lg:mb-[214px]")
       h2(class="text-[19px] md:text-[38px] md:leading-tight font-bold mb-[45px] md:mb-[110px]") 華美之境 築就巔峰
       div(class="text-xs md:text-[23px] md:leading-tight space-y-7 md:space-y-[75px] mb-[42px] md:mb-[105px] lg:mb-[105px]")
@@ -24,7 +24,7 @@ block content
         p 讓人與生態的距離更加貼近
         p 讓每一位客戶都能愛上回「家」
       a(class="w-20 md:w-[165px] inline-block text-xs md:text-[23px] md:leading-none text-main-blue text-center py-[6.5px] md:py-[13px] border border-main-blue rounded", href="about.html") 關於華峰
-    div(class="flex flex-col items-center bg-gradient-to-b from-white to-font-gray -mx-4 px-[29px] md:px-[70px] lg:px-4")
+    div(class="flex flex-col items-center bg-gradient-to-b from-white to-gradient-gray -mx-4 px-[29px] md:px-[70px] lg:px-4")
       div(class="lg:max-w-[1366px] lg:w-full lg:flex lg:justify-between lg:items-center mb-[29px] md:mb-[70px] lg:mb-[95px]")
         div(class="flex flex-col lg:flex-row items-center leading-none")
           h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 線上建案
@@ -63,42 +63,43 @@ block content
         div(class="flex flex-col lg:flex-row items-center leading-none")
           h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 華峰團隊
           span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") Related Company
-      div(class="lg:max-w-[1366px] grid grid-cols-5 bg-[url('../img/team-bg.png')] bg-center bg-cover pt-[60px] md:pt-[152px]")
-        div(data-aos="zoom-in")
-          picture
-            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_1.png")
-            img(src="assets/img/team_word_1.png", alt="")
-        div
-        div(data-aos="zoom-in", data-aos-delay="600")
-          img(src="assets/img/team-build_1.png", alt="")
-        div(data-aos="zoom-in")
-          picture
-            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_2.png")
-            img(src="assets/img/team_word_2.png", alt="")
-        div
-        div
-        div(data-aos="zoom-in", data-aos-delay="600")
-          img(src="assets/img/team-build_2.png", alt="")
-        div(data-aos="zoom-in")
-          picture
-            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_3.png")
-            img(src="assets/img/team_word_3.png", alt="")
-        div
-        div(data-aos="zoom-in", data-aos-delay="300")
-          picture
-            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_4.png")
-            img(src="assets/img/team_word_4.png", alt="")
-        div(data-aos="zoom-in", data-aos-delay="900")
-          img(src="assets/img/team-build_3.png", alt="")
-        div(data-aos="zoom-in", data-aos-delay="300")
-          picture
-            source(media="(min-width: 768px)", srcset="assets/img/team_word_768_5.png")
-            img(src="assets/img/team_word_5.png", alt="")
-        div
-        div(data-aos="zoom-in", data-aos-delay="300")
-          img(src="assets/img/team-build_4.png", alt="")
-        div(data-aos="zoom-in", data-aos-delay="900")
-          img(src="assets/img/team-build_5.png", alt="")
+      div(class="lg:w-full bg-[url('../img/team-bg.png')] bg-center bg-cover pt-[60px] md:pt-[152px] lg:px-[60px]")
+        div(class="lg:max-w-[1080px] grid grid-cols-5 lg:mx-auto")
+          div(data-aos="zoom-in")
+            picture
+              source(media="(min-width: 768px)", srcset="assets/img/team_word_768_1.png")
+              img(src="assets/img/team_word_1.png", alt="")
+          div
+          div(data-aos="zoom-in", data-aos-delay="600")
+            img(src="assets/img/team-build_1.png", alt="")
+          div(data-aos="zoom-in")
+            picture
+              source(media="(min-width: 768px)", srcset="assets/img/team_word_768_2.png")
+              img(src="assets/img/team_word_2.png", alt="")
+          div
+          div
+          div(data-aos="zoom-in", data-aos-delay="600")
+            img(src="assets/img/team-build_2.png", alt="")
+          div(data-aos="zoom-in")
+            picture
+              source(media="(min-width: 768px)", srcset="assets/img/team_word_768_3.png")
+              img(src="assets/img/team_word_3.png", alt="")
+          div
+          div(data-aos="zoom-in", data-aos-delay="300")
+            picture
+              source(media="(min-width: 768px)", srcset="assets/img/team_word_768_4.png")
+              img(src="assets/img/team_word_4.png", alt="")
+          div(data-aos="zoom-in", data-aos-delay="900")
+            img(src="assets/img/team-build_3.png", alt="")
+          div(data-aos="zoom-in", data-aos-delay="300")
+            picture
+              source(media="(min-width: 768px)", srcset="assets/img/team_word_768_5.png")
+              img(src="assets/img/team_word_5.png", alt="")
+          div
+          div(data-aos="zoom-in", data-aos-delay="300")
+            img(src="assets/img/team-build_4.png", alt="")
+          div(data-aos="zoom-in", data-aos-delay="900")
+            img(src="assets/img/team-build_5.png", alt="")
     div(class="lg:max-w-[1366px] mb-[77px] md:mb-[161px] lg:mx-auto px-[29px] md:px-[70px] lg:px-0")
       // Slider main container
       div(class="swiper swiper-build")

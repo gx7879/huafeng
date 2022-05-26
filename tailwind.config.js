@@ -3,15 +3,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'font-gray': '#4b4f4e',
-        'subtitle-gray': '#757778',
-        'main-blue': '#3999c9',
-        'main-yellow': '#ddb151'
-      }
+        "font-gray": "#4b4f4e",
+        "gradient-gray": "#ededed",
+        "subtitle-gray": "#757778",
+        "main-blue": "#3999c9",
+        "main-yellow": "#ddb151",
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
   ],
-}
+};
