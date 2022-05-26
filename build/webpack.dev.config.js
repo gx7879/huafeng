@@ -10,6 +10,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: '[file].map'
     })
   ],
+  devServer: {
+    host: '0.0.0.0',//your ip address
+    port: 8080,
+  }
 })
 
 module.exports = new Promise((resolve, reject) => {

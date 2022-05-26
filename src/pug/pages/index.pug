@@ -119,7 +119,7 @@ block content
               img(src="assets/img/build-pic01.png", alt='')
               span(class="text-xs md:text-sm text-white text-right absolute right-2 md:right-5 bottom-1.5 md:bottom-4") 峰匯建設股東 SKLF昭和力福集團<br>富邦新市政帷幕工程業績
     div(class="mb-[60px] md:mb-[170px] -mx-4")
-      div(class="h-[114px] md:h-[274px] flex justify-center items-center bg-[url('../img/build-bg.png')] bg-fixed bg-center relative")
+      div(class="para h-[114px] md:h-[274px] flex justify-center items-center bg-[url('../img/build-bg.png')] relative")
         img(class="h-[146px] md:h-[351px] lg:h-[586px] absolute bottom-0", src="assets/img/build.png", alt="")
         img(class="h-[47.5px] md:h-[114px] lg:h-[190px] absolute", src="assets/img/build-title.png", alt="")
 
@@ -129,6 +129,7 @@ block script
   script(src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.2/lottie.min.js")
   script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
   script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+  //- script(src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js")
   script(type='text/javascript').
     AOS.init();
     var animation = bodymovin.loadAnimation({
@@ -173,3 +174,29 @@ block script
         }
       }
     });
+
+    //- var image = document.getElementsByClassName('thumbnail');
+    //- new simpleParallax(image, {
+    //-   delay: .6,
+    //-   transition: 'cubic-bezier(0,0,0,1)'
+    //- });
+    const simpleParallax = (elem, modifier) => {
+      let paras = document.getElementsByClassName(elem);
+      for (let i = 0; i < paras.length; i++) {
+        paras[i].setAttribute(
+          "style",
+          "background-repeat: no-repeat; background-attachment: fixed; background-size: cover;background-position: center center;"
+        );
+      }
+      const sp = () => {
+        for (let i = 0; i < paras.length; i++) {
+          let x = paras[i].getBoundingClientRect().top / modifier;
+          let y = Math.round(x * 100) / 100;
+          paras[i].style.backgroundPosition = "center " + y + "px";
+        }
+        requestAnimationFrame(sp);
+      };
+      requestAnimationFrame(sp);
+    };
+
+    simpleParallax("para", 2);
