@@ -8,3 +8,11 @@
     @apply bg-main-blue;
   }
 }
+
+.grid-item, .grid-sizer {
+  @apply w-[49%] mb-2.5;
+}
+
+.gutter-sizer {
+  @apply w-[2%]
+}

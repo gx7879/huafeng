@@ -1,0 +1,33 @@
+extends ../layout/main
+
+block variables
+  - var title = '華峰建設';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  div(class="grid-box w-full")
+    div(class="grid-sizer")
+    div(class="gutter-sizer")
+    div(class="grid-item")
+      img(class="w-full" src="https://picsum.photos/200/300" alt="")
+    div(class="grid-item")
+      img(class="w-full" src="https://picsum.photos/400/300" alt="")
+    div(class="grid-item")
+      img(class="w-full" src="https://picsum.photos/300/300" alt="")
+    div(class="grid-item")
+      img(class="w-full" src="https://picsum.photos/600/300" alt="")
+
+block script
+  script(src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js")
+  script.
+    window.addEventListener("load", function() {
+      var elem = document.querySelector('.grid-box');
+      var msnry = new Masonry( elem, {
+        // options
+        percentPosition: true,
+        gutter: '.gutter-sizer',
+        columnWidth: '.grid-sizer',
+        itemSelector: '.grid-item',
+      });
+    })
