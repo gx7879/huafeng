@@ -6,27 +6,61 @@ block variables
   - var pageClass = 'index-page';
 
 block content
-  div(class="flex flex-col items-center lg:items-start px-[60px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[202px] lg:mb-[360px]")
-    div(class="lg:max-w-[1366px] lg:w-full lg:flex lg:justify-between lg:items-center lg:mx-auto mb-[36px] md:mb-[86px] lg:mb-[95px]")
-      div(class="flex flex-col lg:flex-row items-center leading-none")
-        h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 關於華峰
-        span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") About Us
-    div(class="lg:max-w-[1366px] lg:w-full lg:grid grid-cols-2 lg:mx-auto gap-x-[78px]")
-      img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic.png", alt="")
-      div(class="text-xs md:text-[23px] leading-[30px] md:leading-[71px]")
+  div(class="flex flex-col items-center lg:items-start px-[60px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[202px] lg:mb-[360px] -mx-4")
+    div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[36px] md:mb-[86px] lg:mb-[95px]")
+      div(class="flex flex-col justify-center items-center leading-none")
+        h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] lg:mb-0 pb-[9px] md:pb-6") ABOUT US
+        span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") 關於華峰
+    div(class="lg:max-w-[1366px] lg:w-full lg:mx-auto")
+      div(class="grid grid-cols-2 lg:grid-cols-4 justify-items-center")
+        img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic01.png", alt="")
+        img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic02.png", alt="")
+        img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic03.png", alt="")
+        img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic04.png", alt="")
+    div(class="w-full flex flex-col items-center text-center bg-[url('../img/about-bg.png')] py-10")
+      div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[36px] md:mb-[86px] lg:mb-[95px]")
+        div(class="flex flex-col justify-center items-center leading-none")
+          h3(class="text-white text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] lg:mb-0 pb-[9px] md:pb-6") INTRODUCTION
+          span(class="text-white text-xs md:text-[25px] md:leading-none lg:mb-5") 公司簡介
+      p(class="text-white")
+        |華峰建設開發（股）公司，成立於民國101年12月
+        span(class="lg:block")
+        |由一群志同道合、崇尚自然人文風格的専業建築人共同經營的新創公司，
+        span(class="lg:block")
+        |以投資興建集合式住宅、商業辦公大樓、都市更新規劃及土地開發........
+        span(class="lg:block")
+        |等相關服務為主要業務。
+        span(class="lg:block")
+        |成立迄今，公司始終秉持著『品質為根•永續為本』的經營理念，堅持貫徹人
+        span(class="lg:block")
+        |與建築、人與環境的自然親密結合，選擇最佳土地，注入永績信念，在建築、
+        span(class="lg:block")
+        |環境與人之間，尋求最美好的生活脈絡。
+    div(class="w-full flex flex-col items-center")
+      div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[36px] md:mb-[86px] lg:mb-[95px]")
+        div(class="flex flex-col justify-center items-center leading-none")
+          h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] lg:mb-0 pb-[9px] md:pb-6") BUSINESS CONCEPT
+          span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") 經營理念
+      div(class="grid grid-cols-2")
         p
-          |2006年，當別人習慣用利益去看待建築時，
-          span(class="lg:block") 我們以「感情、熱誠」成立了華峰建設。
-        br
-        p
-          |我們以「不只是把房子蓋好而已」期勉自己，
-          span(class="lg:block") 作為「家」的住宅，
-          span(class="lg:block") 不是找一塊地，用四面水泥牆圍起來的建築方格。
-          span(class="lg:block") 而是提供安心生活、分享喜悅的情感交流空間。
-        br
-        p
-          |規劃、經營與服務皆以滿足人性需求出發，
-          span(class="lg:block") 從公共空間進入室內、人與環境緊密的互動，
-          span(class="lg:block") 為這座城市寫下豐富的建築歷史。
+          |創造幸福空間是我們最大的使命毎一幢房子對我們來說都是具有溫度與能量的有機能,現代人的生活船驗環境建築而生,因此我們更用心「起厝」＞ 除了帶給客戶一流的居住品質，更扁負起點綴城市風采的社會責任。我們以「不只把房子蓋好而已」期勉自己,規劃經營與服務皆以滿足人性需求出發,融合都市裡的自然生態與建築空間,佐以美學人文內涵為調料提升整聘的社區營造，關懷人與土地之間的情誼RS係，使顧客能夠輕易感覺到家的真正意義，一個充滿幸福的地方。
+        div(class="")
+          img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic05.png", alt="")
+
+      //- div(class="text-xs md:text-[23px] leading-[30px] md:leading-[71px]")
+      //-   p
+      //-     |2006年，當別人習慣用利益去看待建築時，
+      //-     span(class="lg:block") 我們以「感情、熱誠」成立了華峰建設。
+      //-   br
+      //-   p
+      //-     |我們以「不只是把房子蓋好而已」期勉自己，
+      //-     span(class="lg:block") 作為「家」的住宅，
+      //-     span(class="lg:block") 不是找一塊地，用四面水泥牆圍起來的建築方格。
+      //-     span(class="lg:block") 而是提供安心生活、分享喜悅的情感交流空間。
+      //-   br
+      //-   p
+      //-     |規劃、經營與服務皆以滿足人性需求出發，
+      //-     span(class="lg:block") 從公共空間進入室內、人與環境緊密的互動，
+      //-     span(class="lg:block") 為這座城市寫下豐富的建築歷史。
 
 
