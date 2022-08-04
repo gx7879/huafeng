@@ -1,6 +1,7 @@
 extends ../layout/main
 
 block head
+  link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
   link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
 
 block variables
@@ -9,10 +10,10 @@ block variables
   - var pageClass = 'index-page';
 
 block content
-  div(class="flex flex-col items-center lg:items-start px-[30px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[202px] lg:mb-[360px] -mx-4")
+  div(class="px-[30px] md:px-[144px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[202px] lg:mb-[360px] -mx-4")
     div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[86px] lg:mb-[95px]")
       div(class="flex flex-col justify-center items-center leading-none")
-        h3(class="text-font-gray text-lg md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-2.5 lg:mb-[22px] pb-3.5 md:pb-7") ABOUT US
+        h3(class="title-underline text-font-gray text-lg md:text-[35px] mb-2.5 lg:mb-[22px] md:pb-7") ABOUT US
         span(class="text-subtitle-gray text-[15px] md:text-[28px] md:leading-none lg:mb-5") 關於華峰
     div(class="lg:max-w-[1366px] lg:w-full lg:mx-auto lg:px-4")
       div(class="grid grid-cols-2 lg:grid-cols-4 gap-x-[18px] gap-y-5 justify-items-center")
@@ -20,10 +21,10 @@ block content
         img(class="lg:h-full object-cover", src="assets/img/about-pic02.png", alt="")
         img(class="lg:h-full object-cover", src="assets/img/about-pic03.png", alt="")
         img(class="lg:h-full object-cover", src="assets/img/about-pic04.png", alt="")
-    div(class="lg:w-full flex flex-col items-center text-center bg-[url('../img/about-bg.png')] -mx-[30px] lg:mx-auto py-10")
+    div(class="lg:w-full flex flex-col items-center text-center bg-[url('../img/about-bg.png')] bg-cover -mx-[30px] lg:mx-auto py-10")
       div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[86px] lg:mb-[95px]")
         div(class="flex flex-col justify-center items-center leading-none")
-          h3(class="text-white text-lg md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-2.5 lg:mb-[22px] pb-3.5 md:pb-7") INTRODUCTION
+          h3(class="title-underline text-white text-lg md:text-[35px] mb-2.5 lg:mb-[22px] md:pb-7") INTRODUCTION
           span(class="text-white text-[15px] md:text-[28px] md:leading-none lg:mb-5") 公司簡介
       p(class="text-white px-[30px]")
         |華峰建設開發（股）公司，成立於民國101年12月
@@ -39,65 +40,89 @@ block content
         |與建築、人與環境的自然親密結合，選擇最佳土地，注入永績信念，在建築、
         span(class="lg:block")
         |環境與人之間，尋求最美好的生活脈絡。
-    div(id="idea" class="w-full flex flex-col items-center")
+    div(id="idea" class="w-full flex flex-col items-center py-20")
       div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[86px] lg:mb-[95px]")
         div(class="flex flex-col justify-center items-center leading-none")
-          h3(class="text-font-gray text-lg md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-2.5 lg:mb-[22px] pb-3.5 md:pb-7") BUSINESS CONCEPT
+          h3(class="title-underline text-font-gray text-lg md:text-[35px] mb-2.5 lg:mb-[22px] md:pb-7") BUSINESS CONCEPT
           span(class="text-subtitle-gray text-[15px] md:text-[28px] md:leading-none lg:mb-5") 經營理念
-      div(class="grid grid-cols-2")
-        p
-          |創造幸福空間是我們最大的使命毎一幢房子對我們來說都是具有溫度與能量的有機能,現代人的生活船驗環境建築而生,因此我們更用心「起厝」＞ 除了帶給客戶一流的居住品質，更扁負起點綴城市風采的社會責任。我們以「不只把房子蓋好而已」期勉自己,規劃經營與服務皆以滿足人性需求出發,融合都市裡的自然生態與建築空間,佐以美學人文內涵為調料提升整聘的社區營造，關懷人與土地之間的情誼RS係，使顧客能夠輕易感覺到家的真正意義，一個充滿幸福的地方。
-        div(class="")
-          img(class="lg:h-full mb-9 md:mb-[84px] lg:mb-0 object-cover", src="assets/img/about-pic05.png", alt="")
-    div(class="flex flex-col items-center mb-[60px] md:mb-[140px] -mx-4")
+      div(class="grid lg:grid-cols-2")
+        p(class="mb-11 lg:mb-0 text-xs leading-6")
+          span(class="block text-base text-center lg:text-left mb-[33px]")
+            |創造幸福空間
+            br
+            |是我們最大的使命
+          |毎一幢房子對我們來說都是具有溫度與能量的有機體，現代人的生活體驗環繞建築而生，因此我們更用心「起厝」，除了帶給客戶一流的居住品質，更肩負起點綴城市風采的社會責任。
+          br
+          br
+          |我們以「不只把房子蓋好而已」期勉自己，規劃經營與服務皆以滿足人性需求出發，融合都市裡的自然生態與建築空間，佐以美學人文內涵為調料提升整體的社區營造，關懷人與土地之間的情誼關係，使顧客能夠輕易感覺到家的真正意義，一個充滿幸福的地方。
+        //- div(class="flex flex-col")
+        div(class="grid grid-cols-2 gap-[3px]")
+          //- img(class="object-cover mb-[3px]", src="assets/img/about-pic05.png", alt="")
+          //- div(class="grid grid-cols-2 space-x-[3px]")
+          //-   img(class="object-cover", src="assets/img/about-pic06.png", alt="")
+          //-   img(class="object-cover", src="assets/img/about-pic07.png", alt="")
+          img(class="col-span-2 object-cover", src="assets/img/about-pic05.png", alt="")
+          //- div(class="grid grid-cols-2 space-x-[3px]")
+          img(class="object-cover", src="assets/img/about-pic06.png", alt="")
+          img(class="object-cover", src="assets/img/about-pic07.png", alt="")
+
+    div(class="flex flex-col items-center mb-[60px] md:mb-[140px] -mx-[30px]")
       div(class="lg:w-full px-[29px] md:px-[70px] lg:px-[60px]")
         div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[86px] lg:mb-[95px]")
           div(class="flex flex-col justify-center items-center leading-none")
-            h3(class="text-font-gray text-lg md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-2.5 lg:mb-[22px] pb-3.5 md:pb-7") RELATED COMPANY
+            h3(class="title-underline text-font-gray text-lg md:text-[35px] mb-2.5 lg:mb-[22px] md:pb-7") RELATED COMPANY
             span(class="text-subtitle-gray text-[15px] md:text-[28px] md:leading-none lg:mb-5") 華豐團隊
-      div(class="lg:w-full bg-[url('../img/team-bg.png')] bg-repeat  pt-[60px] md:pt-[152px]")
-        div(class="px-[29px] md:px-[70px] lg:px-[60px]")
-          div(class="lg:max-w-[1360px] grid grid-cols-5 lg:mx-auto")
-            div(data-aos="zoom-in")
-              picture
-                source(media="(min-width: 768px)", srcset="assets/img/team_word_768_1.png")
-                img(src="assets/img/team_word_1.png", alt="")
-            div
-            div(data-aos="zoom-in", data-aos-delay="600")
-              img(src="assets/img/team-build_1.png", alt="")
-            div(data-aos="zoom-in")
-              picture
-                source(media="(min-width: 768px)", srcset="assets/img/team_word_768_2.png")
-                img(src="assets/img/team_word_2.png", alt="")
-            div
-            div
-            div(data-aos="zoom-in", data-aos-delay="600")
-              img(src="assets/img/team-build_2.png", alt="")
-            div(data-aos="zoom-in")
-              picture
-                source(media="(min-width: 768px)", srcset="assets/img/team_word_768_3.png")
-                img(src="assets/img/team_word_3.png", alt="")
-            div
-            div(data-aos="zoom-in", data-aos-delay="300")
-              picture
-                source(media="(min-width: 768px)", srcset="assets/img/team_word_768_4.png")
-                img(src="assets/img/team_word_4.png", alt="")
-            div(data-aos="zoom-in", data-aos-delay="900")
-              img(src="assets/img/team-build_3.png", alt="")
-            div(data-aos="zoom-in", data-aos-delay="300")
-              picture
-                source(media="(min-width: 768px)", srcset="assets/img/team_word_768_5.png")
-                img(src="assets/img/team_word_5.png", alt="")
-            div
-            div(data-aos="zoom-in", data-aos-delay="300")
-              img(src="assets/img/team-build_4.png", alt="")
-            div(data-aos="zoom-in", data-aos-delay="900")
-              img(src="assets/img/team-build_5.png", alt="")
+      include ../includes/modules/team
+    div(class="lg:max-w-[1366px] -mx-[30px] mb-20 md:mb-[161px] lg:mb-[343px] lg:mx-auto px-[29px] md:px-[70px] lg:px-0")
+      include ../includes/modules/slider
     div(id="service" class="w-full flex flex-col items-center")
       div(class="lg:max-w-[1366px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[86px] lg:mb-[95px]")
         div(class="flex flex-col justify-center items-center leading-none")
-          h3(class="text-font-gray text-lg md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-2.5 lg:mb-[22px] pb-3.5 md:pb-7") SERVICE ITEM
+          h3(class="title-underline text-font-gray text-lg md:text-[35px] mb-2.5 lg:mb-[22px] md:pb-7") SERVICE ITEM
           span(class="text-subtitle-gray text-[15px] md:text-[28px] md:leading-none lg:mb-5") 服務項目
+      div(class="text-xs")
+        div(class="space-y-7")
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 土地開發
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 建設必須要有原料，而土地就是建設的原料
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 獲取土地資訊並判斷分析土地價值，透過談判、訂約取得土地。
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 產品規劃
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 藉由專業團隊的創意及巧思，將土地這個美好的原料轉而創造成舒適與安全的居住幸福空間。
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 階段工作：產品定位、市場區隔分析、產品規劃設計、建照申請。
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 信託服務
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full")
+                |信託服務流程：
+                ul(class="list-decimal pl-3.5")
+                  li 地主、建商雙方簽訂「合建契約」完成
+                  li 地主、建商、銀行…等三方簽訂「信託契約」完成。（信託契約保障內容:土地產權、資金管理與起造人信託。）
+                  li 工程實施階段，銀行可確保已購戸巳繳價金可專款專用，提供金流服務。
+                  li 興建完成後，信託銀行進行房地分配完成後，信託關係结束。
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 房屋預售
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 委由專業銷告團隊進行產品包裝、廣告宣傳、行銷企劃與銷售。
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 營造管理
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 施工品質是我們的不二堅持，施工監造皆由專案管理單位執行，讓顧客輕鬆享受完工後交屋的喜悦。
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 創新的工務整合，工程顧問在設計階段的參與，貢獻其施工經驗與技術，施工之遭遇問題回饋至設計上，故設計者對施工可行性有更正的判斷。
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 整合項目:營造承包、結構設計、建築設計、機電設計、燈光設計，景觀設計等工種以營造優質施工品質及制造最大成本效益。
+          div(class="lg:flex border-b border-subtitle-gray px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 物業管理
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 物業管理是物業的一種增值服務。協助建商與屋主在交屋期到管理委員會成立後各個階段，都能獲得專業妥善的物業服務。
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 物業管理除了提供建築物內勞務與服務外，更可延續建物生命與使用的基本需求外，更可藉由營運管理增加社區收入，以提升不動產與土地的價值。
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 物業服務項目包括:警衛保全、清潔勞務及設備設施類如電力、空調、升降機、給排水、安全系統等維護、修理、保養等三大類
+          div(class="lg:flex px-4 pb-7")
+            div(class="text-center text-border-blue mb-[15px]") 售後服務
+            div(class="space-y-4")
+              div(class="relative pl-3 before:absolute before:top-1.5 before:left-0 before:w-1 before:h-1 before:bg-border-blue before:rounded-full") 完善交屋服務，包括專屬交屋手冊、售後服務卡、24小時內通報售後專責人員服務機制等，並進行客戶服務滿意度調查，讓住戶對建商的售後服務更信任。同時以同理心，在房屋成交後仍持續關心客戶居家狀況與社區管理維護，建立更優質的服務口碑與公司口牌。
+
 
       //- div(class="text-xs md:text-[23px] leading-[30px] md:leading-[71px]")
       //-   p
@@ -117,6 +142,22 @@ block content
 
 
 block script
+  script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
   script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
   script(type='text/javascript').
     AOS.init();
+    const swiperBuild = new Swiper('.swiper-build', {
+      slidesPerView: 1.2,
+      spaceBetween: 8,
+      loop: true,
+      autoplay: true,
+      breakpoints: {
+        768: {
+          spaceBetween: 20
+        },
+        1024: {
+          slidesPerView: 2.5,
+          spaceBetween: 20
+        }
+      }
+    });

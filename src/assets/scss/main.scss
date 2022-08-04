@@ -16,3 +16,9 @@
 .gutter-sizer {
   @apply w-[2%]
 }
+
+@layer components {
+  .title-underline {
+    @apply  relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-11 after:h-0.5 after:bg-border-blue pb-4;
+  }
+}
