@@ -6,7 +6,7 @@ block variables
   - var pageClass = 'index-page';
 
 block content
-  div(class="lg:max-w-[1366px] flex flex-col items-center lg:items-start px-[45px] md:px-[115px] lg:px-0 mt-[66px] md:mt-[165px] mx-auto")
+  div(class="lg:max-w-[1366px] lg:flex flex-col items-center lg:items-start px-[45px] md:px-[115px] lg:px-0 mt-[66px] md:mt-[165px] mx-auto")
     div(class="lg:w-full lg:flex lg:justify-between lg:items-center mb-[33px] md:mb-[70px] lg:mb-[95px]")
       div(class="flex flex-col lg:flex-row items-center leading-none")
         h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 工程進度
@@ -19,15 +19,23 @@ block content
       each item, index in [1, 2, 3, 4]
         div(class=`${index !== 0 ? 'hidden':''}` class="tab-content")
           div(class="lg:flex lg:justify-between")
-            ul(class="lg:flex-1 space-y-[15px] md:space-y-[30px] mb-10 md:mb-[100px] lg:mb-0 list-disc list-inside")
-              each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
-                  span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
-                  span 開工款
-                  span(class="px-1.5 md:px-4") |
-                  span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
+            div(class="lg:flex-1 relative mb-10 md:mb-[100px] lg:mb-0")
+              ul(class="space-y-[15px] md:space-y-[30px] list-disc list-inside")
+                each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                  li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
+                    span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
+                    span 開工款
+                    span(class="px-1.5 md:px-4") |
+                    span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
+              div(class="w-full h-full flex flex-col items-center absolute top-0 left-0 bg-white pt-14 md:pt-[122px]")
+                p(class="text-sm md:text-[28px] leading-none") 輸入密碼才能看工程進度內容
+                label(class="text-sm md:text-[28px] leading-none my-[34px] md:my-[70px]") 密碼
+                  input(class="rounded" type="text" name="")
+                div(class="flex gap-8")
+                  button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 回首頁
+                  button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 確認
             div(class="lg:h-0 lg:flex-1 pb-[100%] lg:pb-[50%] relative overflow-hidden")
-              img(class="lg:max-w-[675px] build-image absolute h-full object-cover", src="assets/img/build-pic.png", alt="")
+              img(class="lg:max-w-[675px] build-image absolute w-full h-full object-contain", src="assets/img/build-pic.png", alt="")
 
 block script
   script.
