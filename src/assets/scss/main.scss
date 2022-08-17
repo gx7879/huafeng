@@ -10,11 +10,11 @@
 }
 
 .grid-item, .grid-sizer {
-  @apply w-[49%] mb-2.5;
+  @apply w-full md:w-[49%] lg:w-[calc(50%-(46px/2))] mb-[18px] lg:mb-[46px];
 }
 
 .gutter-sizer {
-  @apply w-[2%]
+  @apply w-[18px] md:w-[2%] lg:w-[46px]
 }
 
 @layer components {

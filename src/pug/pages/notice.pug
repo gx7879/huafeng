@@ -6,17 +6,23 @@ block variables
   - var pageClass = 'index-page';
 
 block content
-  div(class="grid-box w-full")
-    div(class="grid-sizer")
-    div(class="gutter-sizer")
-    div(class="grid-item")
-      img(class="w-full" src="https://picsum.photos/200/300" alt="")
-    div(class="grid-item")
-      img(class="w-full" src="https://picsum.photos/400/300" alt="")
-    div(class="grid-item")
-      img(class="w-full" src="https://picsum.photos/300/300" alt="")
-    div(class="grid-item")
-      img(class="w-full" src="https://picsum.photos/600/300" alt="")
+  div(class="lg:max-w-[1366px] flex flex-col items-center lg:items-start px-[29px] md:px-[70px] lg:px-0 mt-[52px] md:mt-[135px] mb-[90px] md:mb-[135px] lg:mb-[220px] lg:mx-auto")
+    div(class="lg:w-full lg:flex lg:justify-between lg:items-center mb-[54px] md:mb-[113px] lg:mb-[95px]")
+      div(class="flex flex-col lg:flex-row items-center leading-none")
+        h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 預告建案
+        span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") Announce In Advance
+    h5(class="w-full text-center text-font-gray text-[15px] md:text-[38px] mb-6 lg:mb-[85px]") 預告建案案名
+    div(class="grid-box w-full")
+      div(class="grid-sizer")
+      div(class="gutter-sizer")
+      div(class="grid-item")
+        img(class="w-full" src="https://picsum.photos/200/300" alt="")
+      div(class="grid-item")
+        img(class="w-full" src="https://picsum.photos/400/300" alt="")
+      div(class="grid-item")
+        img(class="w-full" src="https://picsum.photos/300/300" alt="")
+      div(class="grid-item")
+        img(class="w-full" src="https://picsum.photos/600/300" alt="")
 
 block script
   script(src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js")

@@ -30,6 +30,7 @@ import './assets/scss/main.scss'
 
 const menuBtn = document.getElementById('menu-btn')
 const menu = document.getElementById('menu')
+const menuItem = menu.querySelectorAll('.menu-item')
 
 menuBtn.addEventListener('click', function(e) {
   e.stopPropagation()
@@ -40,6 +41,20 @@ menuBtn.addEventListener('click', function(e) {
     menu.classList.add('hidden')
     menuBtn.setAttribute('src', 'assets/img/icon-menu.png')
   }
+})
+menu.addEventListener('click', function(e) {
+  const target = e.path || (e.composedPath ? e.composedPath() : undefined);
+  menuItem.forEach(function(item){
+    const listItem = item.querySelector('ul')
+    listItem.classList.add('hidden')
+    item.classList.remove('text-main-blue')
+    if(!(target ? target.indexOf(item) < 0 : !item.contains(e.target))){
+      console.log(target.indexOf(item) < 0, item)
+      listItem.classList.remove('hidden')
+      item.classList.add('text-main-blue')
+    }
+  })
+
 })
 
 // window.addEventListener('click', function () {

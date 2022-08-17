@@ -7,6 +7,7 @@ module.exports = {
         "gradient-gray": "#ededed",
         "subtitle-gray": "#757778",
         "slider-bg-gray": "#1b1437",
+        "menu-grdient-gray": "#ebecea",
         "main-blue": "#3999c9",
         "border-blue": "#75b2df",
         "border-bottom-blue": "#0082ca",
