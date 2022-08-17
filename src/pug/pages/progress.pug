@@ -11,7 +11,7 @@ block content
       div(class="flex flex-col lg:flex-row items-center leading-none")
         h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 工程進度
         span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") Engineering Progress
-    div(id="tab", class="grid lg:flex grid-cols-2 gap-y-[13px] md:gap-y-7 text-xs md:text-[23px] leading-none mb-[33px] md:mb-[82px] lg:mb-[93px] lg:-mx-5")
+    div(id="tab", class="grid lg:flex grid-cols-2 gap-y-[13px] md:gap-y-7 text-xs md:text-[23px] leading-none mb-[33px] md:mb-[82px] lg:mb-[115px] lg:-mx-5")
       - var tabList = ['華峰雙子星', '華峰上水', '華峰福華', '萬大境']
       each item, index in tabList
           div(class=`${index===0?'text-main-blue':''}`, class="tab-inner odd:border-r lg:border-r lg:last:border-0 border-font-gray odd:text-right px-5 cursor-pointer tab-item")=item
@@ -27,10 +27,10 @@ block content
                     span 開工款
                     span(class="px-1.5 md:px-4") |
                     span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
-              div(class="w-full h-full flex flex-col items-center absolute top-0 left-0 bg-white pt-14 md:pt-[122px]")
+              div(class="w-full h-full flex flex-col items-center lg:items-start absolute top-0 left-0 bg-white pt-14 md:pt-[122px] lg:pt-0")
                 p(class="text-sm md:text-[28px] leading-none") 輸入密碼才能看工程進度內容
-                label(class="text-sm md:text-[28px] leading-none my-[34px] md:my-[70px]") 密碼
-                  input(class="rounded" type="text" name="")
+                label(class="flex items-center text-sm md:text-[28px] leading-none my-[34px] md:my-[70px]") 密碼
+                  input(class="rounded ml-[15px] lg:ml-[35px]" type="text" name="")
                 div(class="flex gap-8")
                   button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 回首頁
                   button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 確認
