@@ -47,11 +47,15 @@ menu.addEventListener('click', function(e) {
   menuItem.forEach(function(item){
     const listItem = item.querySelector('ul')
     listItem.classList.add('hidden')
+    item.children[0].classList.add('border-transparent')
     item.classList.remove('text-main-blue')
+    item.children[0].classList.remove('border-main-blue')
     if(!(target ? target.indexOf(item) < 0 : !item.contains(e.target))){
       console.log(target.indexOf(item) < 0, item)
       listItem.classList.remove('hidden')
       item.classList.add('text-main-blue')
+      item.children[0].classList.remove('border-transparent')
+      item.children[0].classList.add('border-main-blue')
     }
   })
 
