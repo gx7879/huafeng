@@ -1,4 +1,4 @@
-import './assets/scss/main.scss'
+import "./assets/scss/main.scss";
 
 // function renderList(id) {
 //   const targetUl = document.getElementById(id)
@@ -28,38 +28,40 @@ import './assets/scss/main.scss'
 // renderList('list2')
 // renderList('list3')
 
-const menuBtn = document.getElementById('menu-btn')
-const menu = document.getElementById('menu')
-const menuItem = menu.querySelectorAll('.menu-item')
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+const menuItems = Array.from(menu.querySelectorAll(".menu-item"));
 
-menuBtn.addEventListener('click', function(e) {
-  e.stopPropagation()
-  if(menu.classList.contains('hidden')){
-    menu.classList.remove('hidden')
-    menuBtn.setAttribute('src', 'assets/img/icon-close.png')
-  }else{
-    menu.classList.add('hidden')
-    menuBtn.setAttribute('src', 'assets/img/icon-menu.png')
-  }
-})
-menu.addEventListener('click', function(e) {
-  const target = e.path || (e.composedPath ? e.composedPath() : undefined);
-  menuItem.forEach(function(item){
-    const listItem = item.querySelector('ul')
-    listItem.classList.add('hidden')
-    item.children[0].classList.add('border-transparent')
-    item.classList.remove('text-main-blue')
-    item.children[0].classList.remove('border-main-blue')
-    if(!(target ? target.indexOf(item) < 0 : !item.contains(e.target))){
-      console.log(target.indexOf(item) < 0, item)
-      listItem.classList.remove('hidden')
-      item.classList.add('text-main-blue')
-      item.children[0].classList.remove('border-transparent')
-      item.children[0].classList.add('border-main-blue')
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isHidden = menu.classList.toggle("hidden");
+  menuBtn.setAttribute(
+    "src",
+    isHidden ? "assets/img/icon-menu.png" : "assets/img/icon-close.png"
+  );
+});
+
+menu.addEventListener("click", (e) => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth > 1024) return;
+
+  menuItems.forEach((item) => {
+    const listItem = item.querySelector("ul");
+    if (listItem) {
+      listItem.classList.add("hidden");
     }
-  })
+    item.children[0].classList.add("border-transparent");
+    item.classList.remove("text-main-blue");
+    item.children[0].classList.remove("border-main-blue");
 
-})
+    if (item.contains(e.target)) {
+      listItem.classList.remove("hidden");
+      item.classList.add("text-main-blue");
+      item.children[0].classList.remove("border-transparent");
+      item.children[0].classList.add("border-main-blue");
+    }
+  });
+});
 
 // window.addEventListener('click', function () {
 

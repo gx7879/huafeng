@@ -17,11 +17,11 @@ block content
         span(class="text-subtitle-gray text-[15px] md:text-[28px] md:leading-none lg:mb-5") 關於華峰
     div(class="lg:max-w-[1140px] lg:w-full lg:mx-auto mb-[76px] md:mb-[170px] lg:mb-[215px] lg:px-4")
       div(class="grid grid-cols-2 lg:grid-cols-4 gap-x-[18px] md:gap-x-[46px] gap-y-5 justify-items-center")
-        img(class="max-w-[306px] w-full object-cover", src="assets/img/about-pic01.png", alt="")
-        img(class="max-w-[306px] w-full object-cover", src="assets/img/about-pic02.png", alt="")
-        img(class="max-w-[306px] w-full object-cover", src="assets/img/about-pic03.png", alt="")
-        img(class="max-w-[306px] w-full object-cover", src="assets/img/about-pic04.png", alt="")
-    div(class="lg:w-full flex flex-col items-center text-center bg-[url('../img/about-bg.png')] bg-cover -mx-[30px] md:-mx-[70px] lg:mx-auto py-10 md:pt-32 md:pb-[90px] lg:py-40")
+        img(class="max-w-[306px] w-full object-cover cursor-pointer banner", src="assets/img/about-pic01.png", data-target="intro", alt="")
+        img(class="max-w-[306px] w-full object-cover cursor-pointer banner", src="assets/img/about-pic02.png", data-target="concept", alt="")
+        img(class="max-w-[306px] w-full object-cover cursor-pointer banner", src="assets/img/about-pic03.png", data-target="team", alt="")
+        img(class="max-w-[306px] w-full object-cover cursor-pointer banner", src="assets/img/about-pic04.png", data-target="service", alt="")
+    div(id="intro", class="lg:w-full flex flex-col items-center text-center bg-[url('../img/about-bg.png')] bg-cover -mx-[30px] md:-mx-[70px] lg:mx-auto py-10 md:pt-32 md:pb-[90px] lg:py-40")
       div(class="lg:max-w-[1140px] w-full flex justify-center items-center lg:mx-auto mb-[42px] md:mb-[80px] lg:mb-[95px]")
         div(class="flex flex-col justify-center items-center leading-none")
           h3(class="title-underline text-white text-lg md:text-[35px] mb-2.5 md:mb-[22px] lg:mb-[22px] md:pb-7") INTRODUCTION
@@ -40,7 +40,7 @@ block content
         |與建築、人與環境的自然親密結合，選擇最佳土地，注入永績信念，在建築、
         span(class="md:block")
         |環境與人之間，尋求最美好的生活脈絡。
-    div(id="idea" class="w-full flex flex-col items-center py-20 md:pt-[235px] md:pb-[215px] lg:pt-60 lg:pb-72")
+    div(id="concept" class="w-full flex flex-col items-center py-20 md:pt-[235px] md:pb-[215px] lg:pt-60 lg:pb-72")
       div(class="lg:max-w-[1140px] w-full flex justify-center items-center lg:mx-auto mb-[47px] md:mb-[150px] lg:mb-[148px]")
         div(class="flex flex-col justify-center items-center leading-none")
           h3(class="title-underline text-font-gray text-lg md:text-[35px] mb-2.5 md:mb-[22px] lg:mb-[22px] md:pb-7") BUSINESS CONCEPT
@@ -165,3 +165,42 @@ block script
         }
       }
     });
+
+    function smoothScroll(target) {
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 1000; // 动画持续时间
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1); // 计算当前进度（确保不超过 1）
+
+        // 使用缓动函数实现平滑过渡（例如线性渐变）
+        window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      // 缓动函数（可以使用其他缓动函数）
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    const bannerImg = [...document.querySelectorAll(".banner")]
+    bannerImg.forEach((banner)=>{
+      banner.addEventListener("click", ()=> {
+        const id = banner.getAttribute("data-target");
+        const targetEl = document.getElementById(id);
+        if (targetEl) {
+          smoothScroll(targetEl);
+        }
+      })
+    })
