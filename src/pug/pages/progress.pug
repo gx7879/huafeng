@@ -20,20 +20,13 @@ block content
         div(class=`${index !== 0 ? 'hidden':''}` class="tab-content")
           div(class="lg:flex lg:justify-between")
             div(class="lg:flex-1 mb-10 md:mb-[165px] lg:mb-0")
-              ul(class="hidden space-y-[15px] md:space-y-[30px] list-disc list-inside")
+              ul(class="space-y-[15px] md:space-y-[30px] list-disc list-inside")
                 each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                   li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
                     span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
                     span 開工款
                     span(class="px-1.5 md:px-4") |
                     span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
-              div(class="w-full h-full flex flex-col items-center lg:items-start bg-white pt-14 md:pt-[122px] lg:pt-0")
-                p(class="text-sm md:text-[28px] leading-none") 輸入密碼才能看工程進度內容
-                label(class="w-full flex items-center text-sm md:text-[28px] leading-none my-[34px] md:my-[70px]") 密碼
-                  input(class="flex-1 rounded ml-[15px] lg:ml-[35px]" type="text" name="")
-                div(class="flex gap-8")
-                  button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 回首頁
-                  button(type="button", class="text-xs md:text-[23px] md:leading-tight active:bg-main-blue text-main-blue active:text-white border border-main-blue rounded px-4 py-[6.5px] md:py-[13px]") 確認
             div(class="lg:h-0 lg:flex-1 pb-[100%] lg:pb-[50%] relative overflow-hidden")
               img(class="lg:max-w-[675px] build-image absolute w-full h-full object-contain", src="assets/img/build-pic.png", alt="")
 
