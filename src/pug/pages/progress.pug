@@ -11,46 +11,24 @@ block content
       div(class="flex flex-col lg:flex-row items-center leading-none")
         h3(class="text-font-gray text-[15px] md:text-[35px] border-b-[2.5px] md:border-b-[6px] border-main-blue mb-[13px] md:mb-8 lg:mr-10 lg:mb-0 pb-[9px] md:pb-6") 工程進度
         span(class="text-subtitle-gray text-xs md:text-[25px] md:leading-none lg:mb-5") Engineering Progress
-    div(id="tab", class="grid lg:flex grid-cols-2 gap-y-[13px] md:gap-y-7 text-xs md:text-[23px] leading-none mb-[33px] md:mb-[82px] lg:mb-[115px] lg:-mx-5")
-      - var tabList = ['華峰雙子星', '華峰上水', '華峰福華', '萬大境']
-      each item, index in tabList
-          div(class=`${index===0?'text-main-blue':''}`, class="tab-inner odd:border-r lg:border-r lg:last:border-0 border-font-gray odd:text-right px-5 cursor-pointer tab-item")=item
-    div(id="tab-inner", class="lg:w-full mb-[90px] md:mb-[196px]")
-      each item, index in [1, 2, 3, 4]
-        div(class=`${index !== 0 ? 'hidden':''}` class="tab-content")
-          div(class="lg:flex lg:justify-between")
-            div(class="lg:flex-1 mb-10 md:mb-[165px] lg:mb-0")
-              ul(class="space-y-[15px] md:space-y-[30px] list-disc list-inside")
-                each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                  li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
-                    span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
-                    span 開工款
-                    span(class="px-1.5 md:px-4") |
-                    span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
-            div(class="lg:h-0 lg:flex-1 pb-[100%] lg:pb-[50%] relative overflow-hidden")
-              img(class="lg:max-w-[675px] build-image absolute w-full h-full object-contain", src="assets/img/build-pic.png", alt="")
+    div(class="grid lg:flex grid-cols-2 gap-y-[13px] md:gap-y-7 text-xs md:text-[23px] leading-none mb-[33px] md:mb-[82px] lg:mb-[115px] lg:-mx-5")
+      div(class="odd:border-r lg:border-r lg:last:border-0 border-font-gray odd:text-right px-5") 華峰雙子星
+    div(class="lg:w-full mb-[90px] md:mb-[196px]")
+      div(class="tab-content")
+        div(class="lg:flex lg:justify-between")
+          div(class="lg:flex-1 mb-10 md:mb-[165px] lg:mb-0")
+            ul(class="space-y-[15px] md:space-y-[30px] list-disc list-inside")
+              each item, index in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                li(class=`${index>8?'marker:text-main-yellow':'marker:text-main-blue'}`, class="text-xs md:text-[28px] leading-none js-build-progress-click", data-src="assets/img/build-pic.png")
+                  span(class=`${index>8?'text-main-yellow':'text-main-blue'}`, class="-ml-1 md:-ml-2 pr-2.5 md:pr-[26px]") #{index+1>9?index+1:'0'+(index+1)}
+                  span 開工款
+                  span(class="px-1.5 md:px-4") |
+                  span(class="inline-block md:text-xl scale-75 md:scale-100 origin-bottom-left") 完成日期:108.09.12
+          div(class="lg:h-0 lg:flex-1 pb-[100%] lg:pb-[50%] relative overflow-hidden")
+            img(class="lg:max-w-[675px] build-image absolute w-full h-full object-contain", src="assets/img/build-pic.png", alt="")
 
 block script
   script.
-    const tabItem = document.getElementById('tab').querySelectorAll('.tab-item')
-    const tabContents = document.getElementById('tab-inner').querySelectorAll('.tab-content')
-    const panelDisplay = (activePanel) => {
-      for(let i = 0;i < tabItem.length;i++) {
-        if(tabItem[i] === activePanel){
-          tabItem[i].classList.add("text-main-blue");
-          tabContents[i].classList.remove('hidden')
-        }else {
-          tabItem[i].classList.remove("text-main-blue");
-          tabContents[i].classList.add('hidden')
-        }
-      }
-    }
-    tabItem.forEach(function(item){
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        panelDisplay(this);
-      })
-    })
 
     const list = document.querySelectorAll('.js-build-progress-click')
     list.forEach(function(listItem){
